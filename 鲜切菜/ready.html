@@ -268,11 +268,6 @@
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">基础信息</h1>
           </div>
-          <div class="col-sm-6">
-            <div class="breadcrumb float-sm-right">
-              <button type="button" id="add_batch_button" class="btn btn-primary" data-toggle="modal" data-target="#add_batch">添加批次</button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -341,7 +336,7 @@
           <div class="card-body">
             <table class="table table-bordered" id="news">
               <tr>
-                <th style="width: 100px">序号</th>
+                <th style="width: 100px">原料批次</th>
                 <th style="width: 100px">蔬菜</th>
                 <th style="width: 100px">重量</th>
                 <th style="width: 100px">存放地点</th>
@@ -398,82 +393,65 @@
 
         <!-- 卡片2 -->
         <div class="card">
-          <!-- 卡头 -->
           <div class="card-header">
-            <h3 class="card-title">生产环境</h3>
+            <h3 class="card-title">未完成批次</h3>
           </div>
-          <!-- /.卡头 -->
-          <!-- 卡体 -->
+          <!-- /.card-header -->
+          <div class="add_rop">
+              <button type="button" id="add_batch_button" class="btn btn-primary float-right" data-toggle="modal" data-target="#add_batch">新建生产批次</button>
+          </div>
           <div class="card-body">
-            <table class="table table-bordered">
-              <tr>
-                <th style="width: 10px">#</th>
-                <th>环境参数</th>
-                <th>当前指数</th>
-                <th style="width: 40px">状态</th>
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr class="text-center">
+                <th>生产批次号</th>
+                <th>蔬菜</th>
+                <th>重量</th>
+                <th>存放地点</th>
+                <th>添加批次时间</th>
+                <th>操作</th>
               </tr>
-              <tr>
-                <td>1.</td>
-                <td>环境温度及洁净度</td>
-                <td>
-                  <div class="progress progress-xs">
-                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                  </div>
-                </td>
-                <td><span class="badge bg-danger">不达标</span></td>
-              </tr>
-              <tr>
-                <td>2.</td>
-                <td>冷水温度和水量</td>
-                <td>
-                  <div class="progress progress-xs">
-                    <div class="progress-bar bg-warning" style="width: 70%"></div>
-                  </div>
-                </td>
-                <td><span class="badge bg-warning">70%</span></td>
-              </tr>
-              <tr>
-                <td>3.</td>
-                <td>人员消毒</td>
-                <td>
-                  <div class="progress progress-xs progress-striped active">
-                    <div class="progress-bar bg-primary" style="width: 30%"></div>
-                  </div>
-                </td>
-                <td><span class="badge bg-primary">30%</span></td>
-              </tr>
-              <tr>
-                <td>5.</td>
-                <td>成品库温度</td>
-                <td>
-                  <div class="progress progress-xs progress-striped active">
-                    <div class="progress-bar bg-success" style="width: 90%"></div>
-                  </div>
-                </td>
-                <td><span class="badge bg-success">90%</span></td>
-              </tr>
-              <tr>
-                <td>4.</td>
-                <td>原料库温度</td>
-                <td>
-                  <div class="progress progress-xs progress-striped active">
-                    <div class="progress-bar bg-success" style="width: 90%"></div>
-                  </div>
-                </td>
-                <td><span class="badge bg-success">90%</span></td>
-              </tr>
+              </thead>
+              <tbody id="pc_table">
+                <tr class="text-center">
+                  <!-- <td>111</td>
+                  <td>白菜</td>
+                  <td>重量</td>
+                  <td>北京</td>
+                  <td>北京</td>
+                  <td>
+                      <span class="operate edit">编辑</span>
+                      <span class="operate  remove">删除</span>
+                  </td> -->
+                </tr>
+              </tfoot>
             </table>
+            <!-- 分页 -->
+            <nav aria-label="Page navigation example" class=""> 
+               <div id="fy_rop" class="clearfix"> 
+                 <!-- 上一页 -->
+                <div class="page-item"  id="upper">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </div>
+                <ul class="pagination">
+                  <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                </ul>
+              <!-- 下一页 -->
+              <div class="page-item" id="next">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+               </div>
+              </nav>
           </div>
-          <!-- /.卡体 -->
-          <div class="card-footer clearfix">
-            <ul class="pagination pagination-sm m-0 float-right">
-              <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
-          </div>
+          <!-- /.card-body -->
         </div>
         <!-- /.卡片2 -->
       </div>
@@ -499,11 +477,17 @@
           <span class="pub">选择原料<span class="xing">*</span></span>
           <select name="scname" id=""  class="form-control">
              <option value="0">请选择</option>
-             <option value="番茄">番茄</option>
              <option value="生菜">生菜</option>
-             <option value="黄瓜">黄瓜</option>
-             <option value="圆白菜">圆白菜</option>
+             <option value="胡萝卜">胡萝卜</option>
              <option value="马铃薯">马铃薯</option>
+             <option value="洋葱">洋葱</option>
+             <option value="紫苏">紫苏</option>
+             <option value="青椒">青椒</option>
+             <option value="小青菜">小青菜</option>
+             <option value="山药">山药</option>
+             <option value="香菜">香菜</option>
+             <option value="黄瓜">黄瓜</option>
+             <option value="青花菜">青花菜</option>
           </select>
         </div>
         <div class="input-group zhong">

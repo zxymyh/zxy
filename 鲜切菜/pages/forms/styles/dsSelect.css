@@ -125,13 +125,65 @@
   }
   .img_inp{
       width: 125px;
-      height: 120px;
+      height: 128px;
       text-align: center;
       float: left;
   }
   .img_inp p{
       font-weight: bold;
+      margin-bottom: 0;
   }
   .sel{
       width: 80px;
   }
+  #lower{
+      /* width: auto; */
+      text-align: center;
+      margin-bottom: 20px;
+      padding:0 10px;
+      text-align-last: center;
+  }
+  #lower option{
+      text-align: center;
+      text-align-last: center;
+  }
+  .pcxz_rop{
+      display: flex;
+      /* flex-direction: column; */
+  }
+  .lower_rop{
+      margin-right: 30px;
+    margin-left: 10px;
+  }
+  .xx{
+      font-weight: bold;
+      margin-right: 10px;
+  }
+  .xxxx{
+      border: 1px solid #333;
+      padding: 0 10px;
+  }
+  .que{
+      height: 27px;
+      line-height: 10px;
+      width: 80px;
+      margin-left: 20px;
+  }
+  .reset{
+    height: 27px;
+    line-height: 10px;
+    width: 80px;
+    margin-left: 20px;  
+      display: none;
+  }
+  .bor{
+      border-bottom: 3px solid #007bff;
+  }
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
