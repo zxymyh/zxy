@@ -6,16 +6,18 @@
     float: left;
 }
 #content_rop,#chu_rop{
-    height:500px;
     display: none;
-}.rop{
-    min-height: 500px !important;
 }
 .image{
     width: 18px;
     height: 18px;
     vertical-align:top;
 }
-.sidebar{
-    font-size: 1rem;
+table{
+  text-align: center;
 }
+select{
+  width: 100px;
+  border: none;
+}
+

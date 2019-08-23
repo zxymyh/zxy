@@ -1,3 +1,4 @@
+<!DOCTYPE html>
  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>鲜切蔬菜平台</title>
@@ -9,12 +10,12 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap4.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="../../dist/css/new.css">
   <link rel="stylesheet" href="../../dist/js/layui/css/layui.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="./styles/table.css">
 </head>
 <body class="hold-transition sidebar-mini">
@@ -215,7 +216,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="data.html" class="nav-link ">
+                <a href="data.html" class="nav-link active">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>报告列表</p>
                 </a>
@@ -301,6 +302,52 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">库存信息</h3>
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="搜索">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>原料批次</th>
+                      <th>蔬菜</th>
+                      <th>重量</th>
+                      <th>存放地点</th>
+                      <th>入库时间</th>
+                      <th>原料产地</th>
+                      <th>备注信息</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                <tbody id="kcxx">
+                  <!-- <tr>
+                    <td>183</td>
+                    <td>李安</td>
+                    <td>11-7-2018</td>
+                    <td><span class="tag tag-success">西红柿</span></td>
+                    <td>出入库信息完整，采用的自定义鲜切菜，节水率提升</td>
+                    <td><button class="btn btn-default">修改</button></td>
+                  </tr> -->
+                </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
@@ -312,10 +359,10 @@
                 <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th style="width: 10px">#</th>
+                    <th style="width:16%">原料批次</th>
                     <th>蔬菜名字</th>
                     <th>时间</th>
-                    <th style="width: 40px">重量</th>
+                    <th>重量</th>
                   </tr>
                 </thead>
                   <tbody id="ck_rop"> 
@@ -342,17 +389,17 @@
               <div class="card-header">
                 <h3 class="card-title float-left">入库信息</h3>
                 <!-- <button class="btn btn-primary float-right">添加入库</button> -->
-                <button type="button" id="addbtn"  style="margin-right: 2rem" class="btn btn-primary float-right" >添加入库</button>
+                <button type="button" id="addbtn" class="btn btn-primary float-right" >添加入库</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table class="table table-bordered" >
                 <thead>
                   <tr>
-                    <th style="width: 10px">#</th>
+                    <th style="width:16%">原料批次</th>
                     <th>蔬菜名字</th>
                     <th>时间</th>
-                    <th style="width: 40px">重量</th>
+                    <th>重量</th>
                   </tr>
                 </thead>
               <tbody id="t_body">
@@ -376,135 +423,113 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">库存信息</h3>
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="搜索">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>批次</th>
-                      <th>操作人</th>
-                      <th>时间</th>
-                      <th>蔬菜</th>
-                      <th>备注信息</th>
-                      <th>操作</th>
-                    </tr>
-                  </thead>
-                <tbody id="kcxx">
-                  <!-- <tr>
-                    <td>183</td>
-                    <td>李安</td>
-                    <td>11-7-2018</td>
-                    <td><span class="tag tag-success">西红柿</span></td>
-                    <td>出入库信息完整，采用的自定义鲜切菜，节水率提升</td>
-                    <td><button class="btn btn-default">修改</button></td>
-                  </tr> -->
-                </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-        </div><!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </section>
   </div>
   <!-- 添加入库盒子 -->
-  <div class="content-wrapper rop" id="content_rop" style="min-height: 500px">
+  <div class="content-wrapper" id="content_rop">
           <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel">
             <img src="../../dist/img/编辑.png" alt="" class="image"></span> 添加入库产品
             </h4>
-            <button type="button" id="close" class="close" data-dismiss="modal" aria-hidden="true">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
               &times;
             </button>
           </div> 
           <div class="modal-body">
             <form id="inp_rop">
             <div class="input-group">
-              <span class="pub">蔬菜种类</span>
-              <input type="text"  class="form-control" name="rkzl">
+              <span class="suo1 pub">原料种类</span>
+              <input type="text"  class="form-control">
             </div>
             
             <div class="input-group zhong">
-              <span class="suo pub">入库重量</span>
-              <input type="text"  class="form-control" name="rkzl">
+              <span class="suo1 pub">原料重量(KG)</span>
+              <input type="text"  class="form-control">
             </div>
-            <div class="input-group ">
-                <span class="suo1 pub">原料产地</span>
-                <input type="text"  class="form-control" name="rkcd">
+            <div class="input-group">
+                <span class="suo1 pub">原料来源</span>
+                <input type="text"  class="form-control">
               </div>
               <div class="input-group zhong">
-                <span class="suo pub">入库时间</span>
-                <!-- <input type="text"  class="form-control" name="sbip"> -->
-                <input type="text" class="layui-input form-control" id="test1" name="rktime">
+                <span class="suo1 pub">原料产地(省/市)</span>
+                <input type="text" class="form-control">
               </div>
-              <div class="input-group ">
-                  <span class="suo1 pub">&nbsp;&nbsp;&nbsp;备注：</span>
-                  <input type="text"  class="form-control" name="rkdes">
+              <div class="input-group">
+                  <span class="suo1 pub">原料采收时间</span>
+                  <input type="text"  class="form-control">
                 </div>
+                <div class="input-group zhong">
+                  <span class="suo1 pub">原料贮藏方式</span>
+                  <input type="text"  class="form-control">
+                </div>
+                <div class="input-group">
+                  <span class="suo1 pub">产地准入标准</span>
+                  <input type="text"  class="form-control">
+                </div>
+                <div class="input-group zhong">
+                  <span class="suo1 pub">水分含量(%)</span>
+                  <input type="text"  class="form-control">
+                </div>
+                <div class="input-group">
+                  <span class="suo1 pub">叶绿素含量(mg/g)</span>
+                  <input type="text"  class="form-control">
+                </div>
+                <div class="input-group zhong">
+                  <span class="suo1 pub">Vc含量(mg/g)</span>
+                  <input type="text"  class="form-control">
+                </div>
+                <div class="input-group">
+                  <span class="suo1 pub">菌落总数(CFU/g)</span>
+                  <input type="text"  class="form-control">
+                </div>
+                <div class="input-group zhong">
+                  <span class="suo1 pub">备注</span>
+                  <input type="text"  class="form-control">
+                </div>
+                
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-primary" id="add">
                   提交
                 </button>
-            <button  type="button" class="btn btn-default" id="repeat" >
-              重置
-            </button>
           </div>
         </form>
   </div>
   <!-- 添加出库盒子 -->
-  <div class="content-wrapper rop" id="chu_rop" style="min-height: 500px">
+  <div class="content-wrapper" id="chu_rop">
     <div class="modal-header">
       <h4 class="modal-title" id="myModalLabel">
       <img src="../../dist/img/编辑.png" alt="" class="image"></span> 添加出库产品
       </h4>
-      <button type="button" id="close" class="close" data-dismiss="modal" aria-hidden="true">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
         &times;
       </button>
     </div> 
     <div class="modal-body">
-      <form id="inp_rop">
+      <form id="inp_rop1">
       <div class="input-group">
-        <span class="pub">蔬菜种类</span>
-        <input type="text"  class="form-control" name="rkzl">
+        <span class="suo2 pub">原料批次</span>
+        <input type="text"  class="form-control">
       </div>
       <div class="input-group zhong">
-        <span class="suo pub">出库重量</span>
-        <input type="text"  class="form-control" name="rkzl">
+        <span class="suo2 pub">出库重量</span>
+        <input type="text"  class="form-control">
       </div>
       <div class="input-group zhong">
-          <span class="suo pub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用途</span>
-          <input type="text"  class="form-control" name="rkcd">
+          <span class="suo2 pub">用途</span>
+          <input type="text"  class="form-control">
         </div>
-        <div class="input-group ">
-            <span class="suo1 pub">&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
-            <input type="text"  class="form-control" name="rkdes">
+        <div class="input-group">
+            <span class="suo2 pub">备注</span>
+            <input type="text"  class="form-control">
           </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="add">
+        <button type="button" class="btn btn-primary" id="out">
             提交
           </button>
-      <button  type="button" class="btn btn-default" id="repeat" >
-        重置
-      </button>
-      
     </div>
   </form>
 

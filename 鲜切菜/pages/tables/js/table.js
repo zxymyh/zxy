@@ -8,7 +8,6 @@
         var add = document.getElementById("content_rop")
         btn.onclick = ()=>{
             div.style.display = "none"
-            add.style.height = 500+"px"
             add.style.display = "block"
         }
     // 添加出库按钮
