@@ -28,24 +28,30 @@
                             <td>${d.zll}</td>
                             <td>0000000</td>
                             <td>0000000</td>
-                            <td><button class="btn btn-primary" onclick="look(${d.id})">查看</button></td>
+                            <td><button class="btn btn-primary" onclick="look(${d.pccode})">查看</button></td>
                             `
               data_rop.appendChild(tr)
         }
     }
+    $("#add_bg").on("click",function(){
+        $(".tcc_rop").show(500)
+    })
+    $(".close_tcc").on("click",function(e){
+        $(".tcc_rop").hide(500)
+    })
 })()
 var api = "http://210.12.220.75:10036/Vegetables"
 function look(id){
-    console.log(id)
     $.ajax({
         url:api+"/info/detail.action",
         type:"get",
         datatype:"json",
         data:{
-            "id":1
+            "id":id
         },
         success:res=>{
             console.log(res)
         }
     })
+   
 }

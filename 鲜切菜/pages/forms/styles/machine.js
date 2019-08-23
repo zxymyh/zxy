@@ -5,6 +5,22 @@ function clearMachine() {
         $(".mind").empty();
     }
 }
+function btnclick(off){
+    $(".card-body button").click(function(){
+        if(off){
+            // $(this).removeClass("btn-danger")
+            $(this).addClass("btn-danger")
+            $(this).text("停止")
+            $(".state_rop").text("当前状态：启动")
+            off= false
+        }else{
+            $(this).removeClass("btn-danger")
+            $(this).text("启动")
+            $(".state_rop").text("当前状态：停止")
+            off= true
+        }
+     })
+}
 /*拣选机*/
 function pickingMachine() {
     var addContent =  "<div>" +
@@ -13,9 +29,53 @@ function pickingMachine() {
         "<div class=\"mid_2\" style=\"font-size: 0.7em;float: right; width:40%;\">" +
         "<div class=\"card-body box-profile\">" + "<div class=\"card card-primary\">" + "<div class=\"card-header\"><h4> 拣选机参数设置</h4></div>" +
         "<div style=\"font-size:0.8em;\" class=\"card-body\">" +
+        "<div class=\"card-body box-profile btn_rop\">" +
+        "<ul class=\"list-group list-group-unbordered mb-3\">" +
+        "<li class=\"list-group-item state\">" + " <b class=\"state_rop\">当前状态：关闭</b>" +
+        "<li class=\"list-group-item\">" + " <b>产品重量：</b>" +
+        "<span class=\"num float-right\">1000KG</span>" +
+        "<li class=\"list-group-item\">\n" +
+        "<b>进料带运行速率</b>\n" +
+        "<input type='text' class='inp1 float-right' placeholder='请设置' />" +
+        "</li>" +
+        "<li class=\"list-group-item\">\n" +
+        "<b>产品带运行速率</b>\n" +
+        "<input type='text' class='inp1 float-right' placeholder='请设置' />" +
+        "</li>\n" +
+        "</ul>" +
+        "<button type='button' class=\"btn btn-primary btn-block\" >启动</button>\n" +
+        "</div>\n" +
+        "</div>\n" +
+        "</div>\n" +
+        "</div>\n" +
+        "</div>\n" +
+        "</div>";
+    var divContent = $(".mind").html();
+    if (divContent == null || divContent.length == 0){
+        $(".mind").append(addContent)
+    } else {
+        $(".mind").empty();
+        $(".mind").append(addContent)
+    }
+    var off = false
+   
+    btnclick(off)
+}
+// function qi(){
+//     event.target.className = "btn btn-danger btn-block"
+//     event.target.innerHTML = "停止"
+// }
+/*削皮机*/
+function xiaopi() {
+    var addContent =  "<div>" +
+        "<div class=\"mid_1\" style=\"float: left;width:60%;border-radius:6px; overflow:hidden; box-shadow:0 4px 8px #6E6E6E; margin-top: 22px;margin-bottom: 15px;\">" +
+        "<img src=\"./styles/machinePhoto4.png\" alt=\"生产流程\" style=\"height: 100%;width: 100%;\">" + "</div>" +
+        "<div class=\"mid_2\" style=\"font-size: 0.7em;float: right; width:40%;\">" +
+        "<div class=\"card-body box-profile\">" + "<div class=\"card card-primary\">" + "<div class=\"card-header\"><h4> 削皮机参数设置</h4></div>" +
+        "<div style=\"font-size:0.8em;\" class=\"card-body\">" +
         "<div class=\"card-body box-profile\">" +
         "<ul class=\"list-group list-group-unbordered mb-3\">" +
-        "<li class=\"list-group-item state\">" + " <b>当前状态：关闭</b>" +
+        "<li class=\"list-group-item state\">" + " <b class=\"state_rop\">当前状态：关闭</b>" +
         "<li class=\"list-group-item\">" + " <b>产品重量：</b>" +
         "<span class=\"num float-right\">1000KG</span>" +
         "<li class=\"list-group-item\">\n" +
@@ -41,6 +101,7 @@ function pickingMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*切菜机*/
 function cutVegetablesMachine() {
@@ -58,7 +119,7 @@ function cutVegetablesMachine() {
         "                     <div  class=\"card-body box-profile\">\n" +
         "                       <ul class=\"list-group list-group-unbordered mb-3\">\n" +
         "                         <li class=\"list-group-item state\">\n" +
-        "                           <b>当前状态：关闭</b>"+
+        "                           <b class=\"state_rop\">当前状态：关闭</b>"+
         "                         </li>\n" +
         "                         <li class=\"list-group-item\">\n" +
         "                           <b>运行时间</b>\n" +
@@ -101,6 +162,7 @@ function cutVegetablesMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 
 /*色选机*/
@@ -143,6 +205,7 @@ function selectMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*鼓泡机*/
 function bubbleMachine() {
@@ -172,6 +235,7 @@ function bubbleMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*喷淋机*/
 function sprayMachine() {
@@ -233,6 +297,7 @@ function sprayMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*涡流机*/
 function vortexMachine() {
@@ -262,6 +327,7 @@ function vortexMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*振动脱水*/
 function vibrationDehydration() {
@@ -291,6 +357,7 @@ function vibrationDehydration() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*真空包装*/
 function vacuumPackaging() {
@@ -320,6 +387,7 @@ function vacuumPackaging() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*金属检测*/
 function metalDetection() {
@@ -349,6 +417,7 @@ function metalDetection() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*打码机*/
 function barCodeMachine() {
@@ -378,6 +447,7 @@ function barCodeMachine() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*风冷脱水*/
 function airCooled() {
@@ -407,6 +477,7 @@ function airCooled() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*气调包装*/
 function modifiedAtmospherePackaging() {
@@ -501,6 +572,7 @@ function modifiedAtmospherePackaging() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*气调脱水*/
 function pneumaticDehydration() {
@@ -530,6 +602,7 @@ function pneumaticDehydration() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*水触媒*/
 function waterCatalyst() {
@@ -559,6 +632,7 @@ function waterCatalyst() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*离心脱水*/
 function centrifugeDehydration() {
@@ -588,6 +662,7 @@ function centrifugeDehydration() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*自动包装*/
 function automaticPackaging() {
@@ -617,6 +692,7 @@ function automaticPackaging() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }
 /*脉冲强光*/
 function pulsedStrongLight() {
@@ -646,4 +722,5 @@ function pulsedStrongLight() {
         $(".mind").empty();
         $(".mind").append(addContent)
     }
+    btnclick()
 }

@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/data.css">
+  <link rel="stylesheet" href="./styles/table.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- 
@@ -313,7 +315,7 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title float-left ">报告列表</h3>
-              <button class="float-right btn btn-success" type="success">添加报告</button>
+              <button class="float-right btn btn-success" type="success" id="add_bg">添加报告</button>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -350,87 +352,261 @@
                 </tbody>
               </table>
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
-
-          <!-- <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">生产高级参数</h3>
-            </div> -->
-            <!-- /.card-header -->
-            <!-- <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>批次</th>
-                  <th>设备运行参数</th>
-                  <th>产品品质</th>
-                  <th>微生物预测</th>
-                  <th>货架期预测</th>
-                 
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                </tr>
-                <tr>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                </tr>
-                <tr>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                </tr>
-                <tr>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                </tr>
-                <tr>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                </tr>
-                <tr>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                  <td>000</td>
-                </tr>
-                
-               
-                </tbody>
-              </table>
-            </div> -->
-            <!-- /.card-body -->
-          <!-- </div> -->
-          <!-- /.card -->
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
- 
+    <div class="tcc_rop">
+      <div class="content-wrapper">
+        <!-- 主信息区域头部开始 -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>生产报告填写</h1>
+                    </div>
+                    <div class="col-sm-6">
+                         <span class="close_tcc">关闭</span>
+                  </div>
+                </div>
+                <div class="title">
+                  <div class="">
+                      <span>鲜切蔬菜生产报告</span>
+                  </div>
+              </div>
+              <div class="sel_rop">
+                <select name="" id="pc_sel">
+                  <option value="0">请选择批次号</option>
+                </select>
+              </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- 主信息区域头部结束 -->
+        <!-- 主信息区域内容区块开始 -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- 左边模块 -->
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- 生产基本信息 -->
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">生产基本信息</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="card-body">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1">原料种类</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            >
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料贮藏方式及温度</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料质量（kg）</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">生产单位</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料来源</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">联系人</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料入库时间</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">生产线名称</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.card -->
+                        <!-- 包装信息 -->
+                        <div class="card card-danger">
+                            <div class="card-header">
+                                <h3 class="card-title">包装信息</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">原料种类</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">叶绿素含量(mg/g)</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">原料质量(kg)</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">茵落总数(CFU/g)</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">原料来源</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Vc含量(mg/g)</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">原料入库时间</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">生产线名称</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </form>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+
+                    <!-- 右边模块 -->
+                    <div class="col-md-6">
+                        <!-- Horizontal Form -->
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">原料信息</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form class="form-horizontal">
+                                <div class="card-body">
+
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1">原料种类</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            >
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料贮藏方式及温度</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料质量（kg）</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">生产单位</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料来源</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">联系人</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">原料入库时间</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="exampleInputPassword1">生产线名称</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                </div>
+                        </div>
+                        <!-- 原料信息 -->
+                        <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">原料信息</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form class="form-horizontal">
+                                    <div class="card-body">
+
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1">原料种类</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputPassword1">原料贮藏方式及温度</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputPassword1">原料质量（kg）</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">生产单位</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputPassword1">原料来源</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputPassword1">联系人</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputPassword1">原料入库时间</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputPassword1">生产线名称</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1"
+  >
+                                        </div>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                        <!-- /.55654 -->
+              </div>
+                    <!-- /.3333333 -->
+                    <section class="content">
+                          <div class="container-fluid">
+                              <div class="row">
+                                </div>
+                          </div>
+                          <div>
+                                    <button onclick="savePdf()">报告保存为PDF</button>
+                                    <button onclick="saveWord()">报告保存为WORD</button>
+                                    <button onclick="savePng()">报告保存为PNG</button>
+                                    <button onclick="saveExcel()">报告保存为EXCEL</button>
+                          </div>
+                              <!-- /.row -->                       
+      </div>
+    </div>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
